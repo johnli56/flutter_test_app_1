@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'Johnnys_Game.dart';
 // Uncomment lines 7 and 10 to view the visual layout at runtime.
 //import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
@@ -209,6 +210,7 @@ class JohnnyHomeScreen extends StatelessWidget {
           child: Center(
             child: new Column(
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 RaisedButton(
                   onPressed: () {
@@ -232,6 +234,28 @@ class JohnnyHomeScreen extends StatelessWidget {
                   child: Text('Up'),
                 ),
 
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 120.0,
+                  ),
+                  child: ButtonTheme(
+                    minWidth: 200.0,
+                    height: 150.0,
+                    buttonColor: Colors.pinkAccent,
+                    child: RaisedButton(
+                      child: RaisedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => TicTacToe()),
+                          );
+                        },
+                        child: Text('TicTacToe'),
+                      ),
+                      onPressed: null,
+                    ),
+                  ),
+                ),
 
               ],
             ),
